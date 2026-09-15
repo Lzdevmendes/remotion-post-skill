@@ -1,11 +1,30 @@
 {
-  "id": "teste-reels",
-  "brand": "lz-landing",
+  "id": "exemplo-reels",
+  "brand": "exemplo",
   "formato": "reels",
-  "titulo": "Teste reels",
+  "titulo": "Exemplo: dor → virada → como funciona → final",
+  "serie": { "nome": "Dica", "numero": 2 },
+  "fundo": "orbs",
   "slides": [
-    { "layout": "capa", "rotulo": "Trabalho", "titulo": "Software que ==entra em produção==.", "duracao": 3 },
-    { "layout": "lista", "titulo": "Como funciona", "itens": ["Escopo antes", "Um projeto por vez", "Código seu no fim"], "duracao": 3.5 },
-    { "layout": "cta", "titulo": "==Me chama.==", "botao": "lz.dev.br →", "duracao": 2.5 }
+    { "layout": "texto", "emoji": "🏖️", "titulo": "Praia **lotada**?", "duracao": 1.6 },
+    { "layout": "texto", "emoji": "🚗", "titulo": "Trânsito **parado**?", "duracao": 1.6 },
+    {
+      "layout": "texto",
+      "kicker": "a virada",
+      "titulo": "E se desse pra ==saber antes==?",
+      "corpo": "Um app que junta tudo num lugar só.",
+      "duracao": 2.6
+    },
+    {
+      "layout": "lista",
+      "titulo": "Feito pra você",
+      "itens": [
+        { "titulo": "Dados oficiais", "sub": "direto da fonte", "emoji": "✅" },
+        { "titulo": "Tempo real", "sub": "atualiza sozinho", "emoji": "📣" },
+        { "titulo": "Comunidade", "sub": "quem tá lá avisa", "emoji": "🌎" }
+      ],
+      "duracao": 3.4
+    },
+    { "layout": "cta", "tema": "acento", "titulo": "Em breve.", "corpo": "Ative os lembretes.", "botao": "@exemplo", "duracao": 2.8 }
   ]
 }

@@ -2,27 +2,35 @@
 
 **Brand:** <brand> · **Formato:** <formato/variante> · **Rede:** <rede> · **Data:** AAAA-MM-DD
 **Objetivo:** <...> · **Público:** <...> · **Tom:** <...>
+**Estrutura:** <mito → verdade → prova · trilha · antes & depois · problema → solução · apresentação · livre>
 **Tese (frase única):** <...>
 **Prova:** <...>
 **CTA:** <... ou "nenhum">
-**Retenção:** <série "Nome #NN" · layout celular · figurinha (tipo + texto) · contador do carrossel>
+**Retenção:** <chip "Editoria · Série #NN" · progresso/prévia do próximo · spoiler · celular · figurinha · final invertido>
 
 ## Slides
 
 ### 01 · capa · tema claro · acentos: 1
+- **Emoji / kicker:** <🏖️ · // uma mentira por semana · ou —>
 - **Rótulo:** <...>
-- **Título:** <texto exato com ==grifo==>
+- **Título:** <texto exato com ==grifo== / **destaque** / __sublinhado__ / ~~riscado~~>
 - **Corpo:** <...>
-- **Visual:** <o que aparece, ex.: só tipografia / print X de assets/ / 2 celulares com os passos>
+- **Blocos:** <numeros: valor — rótulo (fonte) · dica: RÓTULO · meta — texto · ou —>
+- **Visual:** <só tipografia / print X de assets/ / 2 celulares / código antes×depois / avatar>
+- **Próximo:** <prévia ≤ 5 palavras, ou automático>
 - **Figurinha:** <tipo + texto, ou —>
 - **Por que esse slide:** <o gancho que ele cria / o que faz a pessoa ficar>
 
-### 02 · celular · tema <...> · acentos: <n>
-- **Título:** <...>
-- **Telas:** <rótulo da tela 1>: <passo 1> › <passo 2> › <passo 3> · <rótulo da tela 2>: ...
+### 02 · numero · tema <...> · acentos: <n>
+- **Número:** <valor> — <legenda>
+- **Itens:** <✓ título — sub> ...
 - ...
 
-<!-- reels: acrescente **Duração:** Ns e **Movimento:** entrada + grifo -->
+### 03 · codigo · tema <...> · acentos: <n>
+- **Janelas:** <antes · arquivo.js: linhas> | <depois · arquivo.js: linhas>
+- ...
+
+<!-- reels: no cabeçalho **Trilha:** arquivo + início (s) · **Fundo:** liso|orbs; por cena **Duração:** Ns · **Papel:** dor|virada|demonstração|diferenciais|final (transições e animações são automáticas) -->
 
 ## Legenda
 <texto completo da legenda; em story, texto da figurinha + texto de apoio>

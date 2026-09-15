@@ -47,21 +47,45 @@ const brand = JSON.parse(readFileSync(caminhoBrand, "utf8"));
 
 const erros = [];
 const formatoVertical = post.formato === "story" || post.formato === "reels";
+if (post.musica) {
+  if (post.formato !== "reels") erros.push("musica só existe no formato reels");
+  else if (!existsSync(path.join(pastaPost, "assets", post.musica.arquivo))) erros.push(`musica assets/${post.musica.arquivo} não existe`);
+}
 post.slides.forEach((slide, i) => {
   if (slide.layout === "celular") {
     const telas = slide.telas ?? [];
     if (post.formato === "banner-linkedin") erros.push(`slide ${i + 1}: layout celular não existe no banner-linkedin`);
     if (telas.length < 1 || telas.length > 2) erros.push(`slide ${i + 1}: layout celular precisa de 1 ou 2 telas`);
     telas.forEach((tela, j) => {
-      if (!tela.passos?.length || tela.passos.length > 4) erros.push(`slide ${i + 1}, tela ${j + 1}: de 1 a 4 passos`);
+      if (tela.imagem) {
+        if (!/^https?:\/\//.test(tela.imagem) && !existsSync(path.join(pastaPost, "assets", tela.imagem))) {
+          erros.push(`slide ${i + 1}, tela ${j + 1}: imagem assets/${tela.imagem} não existe`);
+        }
+      } else if (!tela.passos?.length || tela.passos.length > 4) {
+        erros.push(`slide ${i + 1}, tela ${j + 1}: de 1 a 4 passos (ou uma imagem)`);
+      }
     });
   }
   if (slide.sticker && !formatoVertical) erros.push(`slide ${i + 1}: sticker só existe em story/reels (figurinha do Instagram)`);
-  const textos = [slide.titulo, slide.corpo, ...(slide.itens ?? [])].filter(Boolean).join(" ");
-  const acentos = (textos.match(/==[^=]+==/g)?.length ?? 0) + (slide.layout === "cta" && slide.botao ? 1 : 0);
+  const itensTexto = (slide.itens ?? []).flatMap((item) => (typeof item === "string" ? [item] : [item.titulo, item.sub]));
+  const textos = [slide.titulo, slide.corpo, slide.dica?.texto, ...itensTexto].filter(Boolean).join(" ");
+  const marcas = textos.match(/==[^=]+==|\*\*[^*]+\*\*|__[^_]+__|~~[^~]+~~/g)?.length ?? 0;
+  const acentos = marcas + (slide.layout === "cta" && slide.botao ? 1 : 0) + (slide.tema === "acento" ? 1 : 0);
   if (acentos > brand.maxAcentosPorArte) erros.push(`slide ${i + 1}: ${acentos} acentos (máx. ${brand.maxAcentosPorArte})`);
-  if (slide.imagem && !/^https?:\/\//.test(slide.imagem) && !existsSync(path.join(pastaPost, "assets", slide.imagem))) {
-    erros.push(`slide ${i + 1}: imagem assets/${slide.imagem} não existe`);
+  if (slide.layout === "numero" && !slide.numero?.valor) erros.push(`slide ${i + 1}: layout numero precisa de "numero.valor"`);
+  if (slide.layout === "codigo") {
+    const janelas = slide.codigo ?? [];
+    if (janelas.length < 1 || janelas.length > 2) erros.push(`slide ${i + 1}: layout codigo precisa de 1 ou 2 janelas`);
+    janelas.forEach((janela, k) => {
+      if (!janela.linhas?.length || janela.linhas.length > 12) erros.push(`slide ${i + 1}, janela ${k + 1}: de 1 a 12 linhas`);
+    });
+  }
+  if ((slide.numeros?.length ?? 0) > 4) erros.push(`slide ${i + 1}: no máximo 4 números`);
+  if ((slide.itens?.length ?? 0) > 6) erros.push(`slide ${i + 1}: no máximo 6 itens`);
+  for (const [campo, arquivo] of [["imagem", slide.imagem], ["avatar", slide.avatar]]) {
+    if (arquivo && !/^https?:\/\//.test(arquivo) && !existsSync(path.join(pastaPost, "assets", arquivo))) {
+      erros.push(`slide ${i + 1}: ${campo} assets/${arquivo} não existe`);
+    }
   }
 });
 if (erros.length) {

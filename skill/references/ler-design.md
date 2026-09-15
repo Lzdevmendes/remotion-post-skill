@@ -31,6 +31,8 @@ Objetivo: preencher `public/brands/<brand>/brand.json` no estúdio com os valore
 | `maxAcentosPorArte` | regra de uso do acento, se o projeto tiver (comentário no CSS/README); padrão 3 |
 | `marca` | logotipo em texto (ex.: `lz` + `.` na cor de acento) |
 | `site` · `handle` | domínio e @/URL da rede; procure no conteúdo/rodapé do projeto; se não houver, pergunte |
+| `cores.alerta` (opcional) | cor de erro/"não" do projeto (usada no `~~riscado~~` e no rótulo "antes" do código); se não houver, fica a cor média |
+| `assinatura` (opcional) | emojis que o projeto usa como assinatura (ex.: `🌊⛵🏄🏝️`), mostrados no rodapé; só se o projeto já usar |
 
 Faltou um papel (ex.: o projeto não tem fundo escuro)? Derive do mais próximo e **diga isso no resumo** da Fase 1.
 

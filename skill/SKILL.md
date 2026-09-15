@@ -17,7 +17,7 @@ $ESTUDIO/
   public/brands/<brand>/brand.json + fonts/   design extraído de cada projeto
   src/blocos, src/formatos                     componentes (Quadro = layout de todos os formatos)
   scripts/render.mjs                           npm run render -- "AAAA-MM-DD (tema)" [--slide=N]
-  exemplos/                                    um post.json por formato
+  exemplos/                                    um post.json por formato + carrossel-dev com todos os blocos
 $POSTS_DIR/
   AAAA-MM-DD (tema)/                           post.json, roteiro.md, legenda.md, fontes.md, assets/, slide-NN.png | reels.mp4
 ```
@@ -37,41 +37,50 @@ Siga `references/entrevista.md`. `AskUserQuestion` em rodadas (máx. 4 perguntas
 ## Fase 3 — Pesquisa
 - Post sobre projeto do usuário: leia código/README/conteúdo do repo; esses fatos são a fonte primária.
 - Post sobre tema: `WebSearch`/`WebFetch` com fontes primárias (documentação oficial, pesquisa original, changelog), preferindo os últimos 12 meses.
-- Registre em `fontes.md` (afirmação → URL/arquivo). **Nenhum número ou afirmação factual entra sem linha em `fontes.md`.** Na dúvida, corte.
+- Registre em `fontes.md` (afirmação → URL/arquivo). **Nenhum número ou afirmação factual entra sem linha em `fontes.md`** — vale também para `numeros` e `numero`. Na dúvida, corte.
 - Nomes de botões/menus citados na arte: confirme no idioma do post; se só achar em outro idioma, registre isso em `fontes.md`.
 
 ## Fase 4 — Roteiro em plan mode
 1. `EnterPlanMode`.
-2. Roteiro conforme `references/roteiro-template.md`: slide a slide com layout, tema, texto **exato** (com `==grifo==`), visual, figurinha, contagem de acentos; legenda + hashtags; no reels, tempo de cada cena.
-3. **Todo post tem pelo menos 1 elemento de retenção** (série, layout `celular`, figurinha, contador do carrossel) — ver `references/formatos.md`. Passo a passo em tela vira `celular`, não `lista`.
-4. Respeite os limites de `references/formatos.md`.
-5. `ExitPlanMode` para aprovação; ajuste e reapresente se pedirem.
+2. Roteiro conforme `references/roteiro-template.md`: slide a slide com layout, tema, texto **exato** (com as marcas `==grifo==`, `**destaque**`, `__sublinhado__`, `~~riscado~~`), blocos, visual, próximo, figurinha, contagem de acentos; legenda + hashtags; no reels, tempo de cada cena.
+3. Escolha uma **estrutura** de `references/formatos.md` (mito → verdade → prova, trilha, antes & depois, problema → solução, apresentação) ou justifique a livre.
+4. **Todo post tem pelo menos 1 elemento de retenção** (chip de editoria/série, prévia do próximo, spoiler, `celular`, figurinha, final invertido). Passo a passo em tela vira `celular`; código vira `codigo`; dado forte vira `numero`/`numeros`.
+5. Respeite os limites de `references/formatos.md` (inclusive **no máximo 2 blocos extras por slide**).
+6. `ExitPlanMode` para aprovação; ajuste e reapresente se pedirem.
 
 ## Fase 5 — Produção
 1. Crie `"$POSTS_DIR/AAAA-MM-DD (tema)/"` — data de hoje; entre parênteses o nome do projeto ou o tema curto (ex.: `2026-09-14 (Litoral na Palma)`). Dentro: `roteiro.md` (o aprovado), `fontes.md`, `legenda.md`, `post.json`.
-2. Prints/vídeos vão em `assets/` e são referenciados por nome em `slide.imagem`.
-3. `post.json` (tipos em `src/tipos-post.ts`; exemplos em `exemplos/`):
+2. Prints, vídeos e avatar (PNG com fundo transparente) vão em `assets/` e são referenciados por nome.
+3. `post.json` (tipos em `src/tipos-post.ts`; `exemplos/carrossel-dev` usa todos os blocos):
    ```json
    {
      "id": "AAAA-MM-DD-tema-kebab", "brand": "<brand>", "formato": "carrossel|unico|story|banner-linkedin|reels",
      "variante": "4x5|1x1 (unico) · capa|post (banner-linkedin)", "titulo": "...",
-     "serie": { "nome": "Dica", "numero": 1 },
+     "editoria": "Terça · Mito", "serie": { "nome": "Mito", "numero": 1 },
+     "fundo": "liso|orbs", "musica": { "arquivo": "trilha.mp3", "inicio": 40, "volume": 0.7 },
      "slides": [{
-       "layout": "capa|texto|lista|print|celular|cta", "tema": "claro|tingido|escuro",
-       "rotulo": "...", "titulo": "Texto com ==grifo==", "corpo": "...", "itens": ["..."],
-       "imagem": "arquivo-em-assets.png", "selo": { "texto": "...", "tipo": "ar|pronto|obra" },
+       "layout": "capa|texto|lista|print|celular|numero|codigo|cta", "tema": "claro|tingido|escuro|acento",
+       "emoji": "🏖️", "kicker": "o que ninguém te conta", "rotulo": "...",
+       "titulo": "Texto com ==grifo==, **destaque**, __sublinhado__ ou ~~riscado~~", "corpo": "...",
+       "itens": ["linha simples", { "titulo": "card", "sub": "subtítulo", "emoji": "⏱️", "icone": "check" }],
+       "imagem": "print.png", "avatar": "eu-recortado.png", "selo": { "texto": "...", "tipo": "ar|pronto|obra" },
        "fatos": ["..."], "botao": "...",
-       "telas": [{ "rotulo": "Android", "passos": ["Chrome", "Mais", "Instalar"] }],
+       "telas": [{ "rotulo": "Android", "passos": ["Chrome", "Mais", "Instalar"] }, { "rotulo": "Painel", "imagem": "print-painel.png" }],
+       "numero": { "valor": "01", "legenda": "de 06 passos" },
+       "numeros": [{ "valor": "4", "rotulo": "cidades" }],
+       "codigo": [{ "rotulo": "antes", "arquivo": "ruim.js", "linhas": ["if (x === 1) {", "}"] }],
+       "dica": { "rotulo": "dica", "meta": "tempo: 1h", "texto": "..." },
        "sticker": { "dica": "Enquete: \"Já instalou um app assim?\"" },
+       "proximo": "choveu do nada",
        "duracao": 3
      }]
    }
    ```
-4. Renderize: `cd "$ESTUDIO" && npm run render -- "AAAA-MM-DD (tema)"`. O script valida acentos, imagens, telas e figurinha antes.
-5. Layout novo realmente necessário: implemente em `src/formatos/Quadro.tsx` reaproveitando `src/blocos`, carregue a skill `remotion-best-practices` se disponível, e rode `npm run typecheck`.
+4. Renderize: `cd "$ESTUDIO" && npm run render -- "AAAA-MM-DD (tema)"`. O script valida acentos, assets, telas, código, números e figurinha antes.
+5. Layout ou bloco novo realmente necessário: implemente em `src/formatos/Quadro.tsx` / `src/blocos` reaproveitando o que existe, carregue a skill `remotion-best-practices` se disponível, e rode `npm run typecheck`.
 
 ## Fase 6 — Verificação (obrigatória antes de entregar)
-- `Read` em **cada** PNG: texto cortado/sobreposto, fonte de fallback (Arial/Georgia no lugar da fonte da brand), grifo no lugar certo, contraste, margem de segurança do story, conteúdo invadindo o rodapé, texto dos passos quebrando feio dentro do celular.
+- `Read` em **cada** PNG: texto cortado/sobreposto, fonte de fallback (Arial/Georgia no lugar da fonte da brand), emoji virando quadrado (falta fonte de emoji no sistema), marcas no lugar certo, contraste, margem de segurança do story, conteúdo invadindo o rodapé, avatar cobrindo texto, código estourando a janela.
 - Dimensões: `file "<pasta>"/*.png` · reels: `ffprobe -v error -show_entries stream=width,height,duration -of csv=p=0 "<pasta>/reels.mp4"`.
 - Reels: extraia 3 frames para um diretório temporário (`ffmpeg -ss <t> -i "<pasta>/reels.mp4" -frames:v 1 <tmp>/f.png`) e faça `Read`.
 - Problema: corrija o `post.json` (ou o componente) e renderize só o slide afetado (`--slide=N`).

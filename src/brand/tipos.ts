@@ -28,7 +28,9 @@ export type Brand = {
     acentoTexto: string;
     telaGradiente: string;
     telaTexto: string;
+    alerta?: string;
   };
+  assinatura?: string;
   fontes: { display: string; texto: string; mono: string };
   arquivosFonte: FonteArquivo[];
   googleFonts?: string[];

@@ -27,21 +27,26 @@ A [Claude Code](https://claude.com/claude-code) skill + a [Remotion](https://www
 | LinkedIn banner | 1584×396 (cover) or 1200×627 (post) | PNG @2x |
 | Reels | 1080×1920, 30fps | MP4 (H.264, CRF 18) |
 
-Layouts: `capa` (cover), `texto` (text), `lista` (list), `print` (screenshot), `celular` (phone mockups with step-by-step screens), `cta`. Highlights are written as `==text==`.
+### Building blocks
+
+- **Layouts**: `capa` (cover), `texto`, `lista` (lines or cards with emoji), `print` (screenshot), `celular` (phone mockups with steps or a real screenshot), `numero` (giant number), `codigo` (code window, before & after), `cta`.
+- **Text marks**: `==highlight==`, `**emphasis**`, `__hand-drawn underline__`, `~~strikethrough~~`.
+- **Blocks for any slide**: hero `emoji`, `// kicker` in mono, stat grid (`numeros`), tip box (`dica`), cut-out `avatar`, Instagram sticker area.
+- **Themes**: light, tinted, dark and an inverted `acento` theme for the final slide.
 
 ### Retention elements
 
-Every post gets at least one element that makes people stop, come back or interact:
+Every post gets at least one element that makes people stop, come back or interact: series/editorial chip (`● TUESDAY · MYTH #01`), carousel progress bar, contextual footer CTA and "next: …" teaser, spoiler box, phone mockup, sticker area and an inverted final slide.
 
-- **Series badge** — `post.serie` renders a chip like `DICA #01` next to the logo.
-- **Phone mockup** — `celular` layout shows up to 2 phones with numbered steps (e.g. Android × iPhone).
-- **Sticker area** — `slide.sticker` reserves a dashed area in stories/reels for the poll/quiz sticker you add in the Instagram app.
-- **Carousel counter** — `01 / 07` and "swipe →" are automatic.
+### Reels
+
+Each slide becomes a scene. Transitions (slide/fade), staggered entrances with mask reveal, popping and floating emojis, 3D phone spin-in, animated marks, counting numbers and code typing are automatic. Optional: drifting blurred orbs background (`fundo: "orbs"`) and a music track starting at its strongest part (`musica`).
 
 ### Requirements
 
 - Node.js 20+
 - Claude Code
+- An emoji font (Linux: `sudo apt install fonts-noto-color-emoji`; macOS/Windows already have one)
 - `ffmpeg`/`ffprobe` (optional, used to verify reels)
 
 ### Install
@@ -71,7 +76,8 @@ Render manually (e.g. after editing a `post.json`):
 
 ```bash
 npm run render -- "2026-09-14 (my topic)"     # folder inside postsDir
-npm run render -- exemplos/carrossel           # bundled examples
+npm run render -- exemplos/carrossel-dev       # example using every block
+npm run render -- exemplos/reels               # animated example
 npm run studio                                 # Remotion Studio, live preview
 ```
 
@@ -87,7 +93,7 @@ The skill creates new brands automatically from the project you are in.
 
 ### Code language
 
-The skill, types and components are written in Brazilian Portuguese (`slide.titulo` = title, `corpo` = body, `rotulo` = label, `fatos` = facts, `botao` = button, `telas` = screens, `passos` = steps, `serie` = series). Contributions with translations are welcome.
+The skill, types and components are written in Brazilian Portuguese (`slide.titulo` = title, `corpo` = body, `rotulo` = label, `fatos` = facts, `botao` = button, `telas` = screens, `passos` = steps, `serie` = series, `numeros` = numbers, `dica` = tip, `codigo` = code). Contributions with translations are welcome.
 
 ### License
 
@@ -116,21 +122,26 @@ Uma skill do [Claude Code](https://claude.com/claude-code) + um estúdio [Remoti
 | Banner LinkedIn | 1584×396 (capa) ou 1200×627 (post) | PNG @2x |
 | Reels | 1080×1920, 30fps | MP4 (H.264, CRF 18) |
 
-Layouts: `capa`, `texto`, `lista`, `print`, `celular` (molduras de celular com o passo a passo), `cta`. Destaques são escritos como `==texto==`.
+### Blocos
+
+- **Layouts**: `capa`, `texto`, `lista` (linhas ou cards com emoji), `print`, `celular` (molduras com o passo a passo ou print real), `numero` (número gigante), `codigo` (janela de código, antes & depois), `cta`.
+- **Marcas de texto**: `==grifo==`, `**destaque**`, `__sublinhado à mão__`, `~~riscado~~`.
+- **Blocos para qualquer slide**: `emoji` grande, `// kicker` em mono, grade de números (`numeros`), caixa de dica (`dica`), `avatar` recortado, área de figurinha do Instagram.
+- **Temas**: claro, tingido, escuro e `acento` invertido para o slide final.
 
 ### Elementos de retenção
 
-Todo post leva pelo menos um elemento que faz a pessoa parar, voltar ou interagir:
+Todo post leva pelo menos um elemento que faz a pessoa parar, voltar ou interagir: chip de editoria/série (`● TERÇA · MITO #01`), barra de progresso do carrossel, CTA do rodapé que muda por slide e prévia "próximo: …", caixa de spoiler, moldura de celular, área de figurinha e slide final invertido.
 
-- **Selo de série** — `post.serie` mostra um chip como `DICA #01` ao lado da marca.
-- **Moldura de celular** — o layout `celular` mostra até 2 celulares com os passos numerados (ex.: Android × iPhone).
-- **Área de figurinha** — `slide.sticker` reserva uma área tracejada no story/reels para a enquete/quiz que você adiciona no Instagram.
-- **Contador do carrossel** — `01 / 07` e "arraste →" são automáticos.
+### Reels
+
+Cada slide vira uma cena. Transições (slide/fade), entrada em cascata com revelação por máscara, emoji com "pop" e flutuação, celular girando em 3D, marcas animadas, números contando e código aparecendo linha a linha são automáticos. Opcional: fundo com orbs desfocados (`fundo: "orbs"`) e trilha entrando no trecho mais forte (`musica`).
 
 ### Requisitos
 
 - Node.js 20+
 - Claude Code
+- Uma fonte de emoji (Linux: `sudo apt install fonts-noto-color-emoji`; macOS/Windows já têm)
 - `ffmpeg`/`ffprobe` (opcional, para verificar reels)
 
 ### Instalação
@@ -160,7 +171,8 @@ Renderizar manualmente (ex.: depois de editar um `post.json`):
 
 ```bash
 npm run render -- "2026-09-14 (meu tema)"      # pasta dentro de postsDir
-npm run render -- exemplos/carrossel           # exemplos do repo
+npm run render -- exemplos/carrossel-dev       # exemplo com todos os blocos
+npm run render -- exemplos/reels               # exemplo animado
 npm run studio                                 # Remotion Studio, preview ao vivo
 ```
 

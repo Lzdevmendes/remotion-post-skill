@@ -18,6 +18,7 @@
     "acento": "#FFC63D",
     "acentoFundo": "#FFF3D2",
     "acentoTexto": "#6B4E00",
+    "alerta": "#A9564B",
     "telaGradiente": "radial-gradient(circle at 30% 25%, #12463E 0%, #062B27 70%)",
     "telaTexto": "#7E9891"
   },

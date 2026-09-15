@@ -1,0 +1,55 @@
+{
+  "id": "exemplo-carrossel-dev",
+  "brand": "exemplo",
+  "formato": "carrossel",
+  "titulo": "Exemplo: mito → verdade → prova → final",
+  "editoria": "Terça",
+  "serie": { "nome": "Mito", "numero": 1 },
+  "slides": [
+    {
+      "layout": "capa",
+      "kicker": "uma mentira por semana",
+      "titulo": "“pra programar você precisa ser ~~bom em matemática~~”",
+      "dica": { "rotulo": "spoiler do próximo slide", "texto": "lógica pesa mais que cálculo." }
+    },
+    {
+      "layout": "codigo",
+      "kicker": "o que ninguém te conta",
+      "titulo": "programar é **decidir**.",
+      "codigo": [{ "arquivo": "chuva.js", "linhas": ["if (chove) {", "  pegarGuardaChuva()", "}"] }],
+      "corpo": "se A acontecer, faça B. as contas? a linguagem faz.",
+      "numeros": [
+        { "valor": "3", "rotulo": "linhas de código" },
+        { "valor": "1", "rotulo": "decisão" }
+      ],
+      "proximo": "antes e depois"
+    },
+    {
+      "layout": "codigo",
+      "tema": "tingido",
+      "titulo": "chega de if/else em **escadinha**.",
+      "codigo": [
+        { "rotulo": "antes", "arquivo": "ruim.js", "linhas": ["if (x === 1) {", "  do1()", "} else if (x === 2) {", "  do2()", "}"] },
+        { "rotulo": "depois", "arquivo": "bom.js", "linhas": ["const acoes = {", "  1: do1,", "  2: do2,", "}", "acoes[x]?.()"] }
+      ],
+      "dica": { "rotulo": "nome disso", "meta": "js", "texto": "dispatch table: mais fácil de adicionar caso novo." },
+      "proximo": "como praticar"
+    },
+    {
+      "layout": "numero",
+      "numero": { "valor": "15", "legenda": "minutos por dia" },
+      "titulo": "__pratique__ um pouco por dia.",
+      "itens": [
+        { "titulo": "1 exercício curto", "sub": "lógica antes de sintaxe", "emoji": "⏱️", "icone": "check" },
+        { "titulo": "publica o que fez", "sub": "github ou linkedin", "emoji": "🚀", "icone": "check" }
+      ]
+    },
+    {
+      "layout": "cta",
+      "tema": "acento",
+      "kicker": "chegou até aqui?",
+      "titulo": "marca aquele amigo que ==trava na matemática==.",
+      "botao": "segue pra mais →"
+    }
+  ]
+}
