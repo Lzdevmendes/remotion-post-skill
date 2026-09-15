@@ -1,16 +1,20 @@
 {
-  "id": "teste-story",
+  "id": "exemplo-story",
   "brand": "lz-landing",
   "formato": "story",
-  "titulo": "Teste story",
+  "titulo": "Exemplo de story com retenção",
+  "serie": { "nome": "Dica", "numero": 1 },
   "slides": [
     {
-      "layout": "print",
-      "rotulo": "Em produção",
-      "titulo": "Galvão Store",
-      "selo": { "texto": "Em produção", "tipo": "ar" },
-      "corpo": "E-commerce de calçados com checkout Mercado Pago e painel próprio.",
-      "fatos": ["Next.js 15", "Drizzle", "Mercado Pago", "Turborepo"]
+      "layout": "celular",
+      "rotulo": "App sem loja",
+      "titulo": "Nem todo app precisa de ==loja==.",
+      "telas": [
+        { "rotulo": "Android", "passos": ["Chrome", "Mais", "Instalar"] },
+        { "rotulo": "iPhone", "passos": ["Safari", "Compartilhar", "Adicionar à Tela de Início"] }
+      ],
+      "corpo": "Se o site for um PWA, ele abre como app.",
+      "sticker": { "dica": "Enquete: \"Já instalou um app assim?\"" }
     }
   ]
 }

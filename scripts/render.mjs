@@ -46,7 +46,17 @@ if (!existsSync(caminhoBrand)) throw new Error(`Brand "${post.brand}" não encon
 const brand = JSON.parse(readFileSync(caminhoBrand, "utf8"));
 
 const erros = [];
+const formatoVertical = post.formato === "story" || post.formato === "reels";
 post.slides.forEach((slide, i) => {
+  if (slide.layout === "celular") {
+    const telas = slide.telas ?? [];
+    if (post.formato === "banner-linkedin") erros.push(`slide ${i + 1}: layout celular não existe no banner-linkedin`);
+    if (telas.length < 1 || telas.length > 2) erros.push(`slide ${i + 1}: layout celular precisa de 1 ou 2 telas`);
+    telas.forEach((tela, j) => {
+      if (!tela.passos?.length || tela.passos.length > 4) erros.push(`slide ${i + 1}, tela ${j + 1}: de 1 a 4 passos`);
+    });
+  }
+  if (slide.sticker && !formatoVertical) erros.push(`slide ${i + 1}: sticker só existe em story/reels (figurinha do Instagram)`);
   const textos = [slide.titulo, slide.corpo, ...(slide.itens ?? [])].filter(Boolean).join(" ");
   const acentos = (textos.match(/==[^=]+==/g)?.length ?? 0) + (slide.layout === "cta" && slide.botao ? 1 : 0);
   if (acentos > brand.maxAcentosPorArte) erros.push(`slide ${i + 1}: ${acentos} acentos (máx. ${brand.maxAcentosPorArte})`);

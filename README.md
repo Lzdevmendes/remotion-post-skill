@@ -11,7 +11,7 @@
 A [Claude Code](https://claude.com/claude-code) skill + a [Remotion](https://www.remotion.dev) studio that turns a single command into on-brand social media posts. Run `/post` inside any project and it:
 
 1. **Reads the project's design** — CSS custom properties, `@font-face`, Tailwind theme, `next/font`, React Native theme — into a `brand.json`.
-2. **Interviews you** (grill-me style) until the post has a hook, a thesis, proof and a call to action.
+2. **Interviews you** (grill-me style) until the post has a hook, a thesis, proof, a call to action and at least one retention element.
 3. **Researches the topic** — every number needs a source in `fontes.md`.
 4. **Shows the script in plan mode**, slide by slide, for your approval.
 5. **Renders** PNG/MP4 with the exact fonts and colors of your project.
@@ -27,7 +27,16 @@ A [Claude Code](https://claude.com/claude-code) skill + a [Remotion](https://www
 | LinkedIn banner | 1584×396 (cover) or 1200×627 (post) | PNG @2x |
 | Reels | 1080×1920, 30fps | MP4 (H.264, CRF 18) |
 
-Layouts: `capa` (cover), `texto` (text), `lista` (list), `print` (screenshot), `cta`. Highlights are written as `==text==`.
+Layouts: `capa` (cover), `texto` (text), `lista` (list), `print` (screenshot), `celular` (phone mockups with step-by-step screens), `cta`. Highlights are written as `==text==`.
+
+### Retention elements
+
+Every post gets at least one element that makes people stop, come back or interact:
+
+- **Series badge** — `post.serie` renders a chip like `DICA #01` next to the logo.
+- **Phone mockup** — `celular` layout shows up to 2 phones with numbered steps (e.g. Android × iPhone).
+- **Sticker area** — `slide.sticker` reserves a dashed area in stories/reels for the poll/quiz sticker you add in the Instagram app.
+- **Carousel counter** — `01 / 07` and "swipe →" are automatic.
 
 ### Requirements
 
@@ -78,7 +87,7 @@ The skill creates new brands automatically from the project you are in.
 
 ### Code language
 
-The skill, types and components are written in Brazilian Portuguese (`slide.titulo` = title, `corpo` = body, `rotulo` = label, `fatos` = facts, `botao` = button). Contributions with translations are welcome.
+The skill, types and components are written in Brazilian Portuguese (`slide.titulo` = title, `corpo` = body, `rotulo` = label, `fatos` = facts, `botao` = button, `telas` = screens, `passos` = steps, `serie` = series). Contributions with translations are welcome.
 
 ### License
 
@@ -91,7 +100,7 @@ Code: [MIT](LICENSE). **Remotion has its own license**: free for individuals, co
 Uma skill do [Claude Code](https://claude.com/claude-code) + um estúdio [Remotion](https://www.remotion.dev) que transforma um comando em posts com a identidade visual do seu projeto. Rode `/post` dentro de qualquer projeto e ela:
 
 1. **Lê o design do projeto** — custom properties do CSS, `@font-face`, tema do Tailwind, `next/font`, tema do React Native — e gera um `brand.json`.
-2. **Te entrevista** (estilo grill-me) até o post ter gancho, tese, prova e CTA.
+2. **Te entrevista** (estilo grill-me) até o post ter gancho, tese, prova, CTA e pelo menos um elemento de retenção.
 3. **Pesquisa o tema** — todo número precisa de fonte em `fontes.md`.
 4. **Mostra o roteiro em plan mode**, slide a slide, para você aprovar.
 5. **Renderiza** PNG/MP4 com as fontes e cores exatas do projeto.
@@ -107,7 +116,16 @@ Uma skill do [Claude Code](https://claude.com/claude-code) + um estúdio [Remoti
 | Banner LinkedIn | 1584×396 (capa) ou 1200×627 (post) | PNG @2x |
 | Reels | 1080×1920, 30fps | MP4 (H.264, CRF 18) |
 
-Layouts: `capa`, `texto`, `lista`, `print`, `cta`. Destaques são escritos como `==texto==`.
+Layouts: `capa`, `texto`, `lista`, `print`, `celular` (molduras de celular com o passo a passo), `cta`. Destaques são escritos como `==texto==`.
+
+### Elementos de retenção
+
+Todo post leva pelo menos um elemento que faz a pessoa parar, voltar ou interagir:
+
+- **Selo de série** — `post.serie` mostra um chip como `DICA #01` ao lado da marca.
+- **Moldura de celular** — o layout `celular` mostra até 2 celulares com os passos numerados (ex.: Android × iPhone).
+- **Área de figurinha** — `slide.sticker` reserva uma área tracejada no story/reels para a enquete/quiz que você adiciona no Instagram.
+- **Contador do carrossel** — `01 / 07` e "arraste →" são automáticos.
 
 ### Requisitos
 

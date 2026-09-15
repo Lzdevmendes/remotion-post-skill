@@ -1,6 +1,6 @@
 import { AbsoluteFill, useVideoConfig } from "remotion";
 import type { Brand } from "../brand/tipos";
-import { Botao, Corpo, Fatos, Marca, paleta, Rotulo, Selo, Tela, Titulo } from "../blocos";
+import { AreaSticker, Botao, Celular, Corpo, Fatos, Marca, paleta, Rotulo, Selo, SeloSerie, Tela, Titulo } from "../blocos";
 import type { Post, Slide } from "../tipos-post";
 
 type QuadroProps = {
@@ -38,7 +38,10 @@ export function Quadro({ post, brand, slide, indice, entrada = 1, progresso = 1 
   return (
     <AbsoluteFill style={{ background: p.fundo, color: p.texto, padding: `${margemVertical}px ${margemLateral}px`, display: "flex", flexDirection: "column" }}>
       <div style={{ display: "flex", alignItems: "center", justifyContent: capaLinkedin ? "flex-end" : "space-between", gap: 24 * u }}>
-        <Marca brand={brand} u={u * (horizontal ? 1.3 : 1)} cor={p.texto} />
+        <div style={{ display: "flex", alignItems: "center", gap: 20 * u }}>
+          <Marca brand={brand} u={u * (horizontal ? 1.3 : 1)} cor={p.texto} />
+          {post.serie && !horizontal && <SeloSerie brand={brand} u={u} p={p} nome={post.serie.nome} numero={post.serie.numero} />}
+        </div>
         {slide.selo ? (
           <Selo brand={brand} u={u} texto={slide.selo.texto} tipo={slide.selo.tipo} />
         ) : ehCarrossel ? (
@@ -61,6 +64,11 @@ export function Quadro({ post, brand, slide, indice, entrada = 1, progresso = 1 
         }}
       >
         {conteudo}
+        {slide.sticker && !horizontal && (
+          <div style={{ marginTop: 40 * u }}>
+            <AreaSticker brand={brand} u={u} p={p} dica={slide.sticker.dica} />
+          </div>
+        )}
       </div>
 
       {!horizontal && (
@@ -133,6 +141,19 @@ function ConteudoVertical({ brand, slide, p, u, postId, progresso, vertical }: C
           </div>
           {slide.corpo && <div style={{ marginTop: 32 * u }}><Corpo brand={brand} u={u} p={p} texto={slide.corpo} tamanho={32} progresso={progresso} /></div>}
           {slide.fatos && <div style={{ marginTop: 28 * u }}><Fatos brand={brand} u={u} p={p} fatos={slide.fatos} /></div>}
+        </>
+      );
+    case "celular":
+      return (
+        <>
+          {slide.rotulo && <Rotulo brand={brand} u={u} p={p}>{slide.rotulo}</Rotulo>}
+          {slide.titulo && <Titulo brand={brand} u={u} p={p} texto={slide.titulo} tamanho={64 * escala} progresso={progresso} />}
+          <div style={{ marginTop: 44 * u, display: "flex", gap: 32 * u, justifyContent: "center" }}>
+            {(slide.telas ?? []).map((tela, i) => (
+              <Celular key={i} brand={brand} u={u} tela={tela} />
+            ))}
+          </div>
+          {slide.corpo && <div style={{ marginTop: 40 * u }}><Corpo brand={brand} u={u} p={p} texto={slide.corpo} tamanho={34} progresso={progresso} /></div>}
         </>
       );
     case "cta":

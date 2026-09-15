@@ -1,7 +1,7 @@
 import { Fragment, type CSSProperties, type ReactNode } from "react";
 import { Img, staticFile } from "remotion";
 import type { Brand } from "../brand/tipos";
-import type { Slide, Tema } from "../tipos-post";
+import type { Slide, TelaCelular, Tema } from "../tipos-post";
 
 export type Paleta = {
   fundo: string;
@@ -153,6 +153,29 @@ export function Selo({ brand, u, texto, tipo }: Base & { texto: string; tipo: "a
   );
 }
 
+export function SeloSerie({ brand, u, p, nome, numero }: Base & { p: Paleta; nome: string; numero: number }) {
+  const c = brand.cores;
+  return (
+    <span
+      style={{
+        fontFamily: brand.fontes.display,
+        fontSize: 22 * u,
+        fontWeight: 600,
+        letterSpacing: brand.rotuloTracking,
+        textTransform: "uppercase",
+        fontVariantNumeric: "tabular-nums",
+        padding: `${8 * u}px ${18 * u}px`,
+        borderRadius: 999,
+        whiteSpace: "nowrap",
+        background: p.escuro ? c.fundoClaro : c.fundoEscuro,
+        color: p.escuro ? c.fundoEscuro : c.fundoClaro,
+      }}
+    >
+      {nome} #{String(numero).padStart(2, "0")}
+    </span>
+  );
+}
+
 export function Fatos({ brand, u, p, fatos }: Base & { p: Paleta; fatos: string[] }) {
   return (
     <div style={{ display: "flex", flexWrap: "wrap", gap: `${12 * u}px ${14 * u}px` }}>
@@ -201,6 +224,96 @@ export function Tela({ brand, u, p, postId, imagem, alturaMax }: Base & { p: Pal
       }}
     >
       {src ? <Img src={src} style={{ width: "100%", height: "100%", objectFit: "cover" }} /> : "print do projeto"}
+    </div>
+  );
+}
+
+// Moldura de celular com os passos em "telinhas": o último passo fica destacado em cor média (não conta como acento).
+export function Celular({ brand, u, tela }: Base & { tela: TelaCelular }) {
+  const c = brand.cores;
+  return (
+    <div
+      style={{
+        flex: "1 1 0",
+        maxWidth: 400 * u,
+        aspectRatio: "9 / 11",
+        background: c.fundoEscuro,
+        borderRadius: 60 * u,
+        padding: 12 * u,
+        boxShadow: `0 ${24 * u}px ${56 * u}px rgba(0,0,0,.14)`,
+      }}
+    >
+      <div style={{ width: "100%", height: "100%", background: c.fundoClaro, borderRadius: 48 * u, overflow: "hidden", display: "flex", flexDirection: "column", padding: `${20 * u}px ${22 * u}px` }}>
+        <div style={{ alignSelf: "center", width: 110 * u, height: 32 * u, borderRadius: 999, background: c.fundoEscuro, marginBottom: 30 * u, flex: "none" }} />
+        {/* Sem caixa alta: rótulo de tela costuma ser nome de marca (iPhone, Android). */}
+        <div style={{ fontFamily: brand.fontes.display, fontSize: 26 * u, fontWeight: 600, letterSpacing: "-0.01em", color: c.neutro, marginBottom: 18 * u }}>
+          {tela.rotulo}
+        </div>
+        {tela.passos.map((passo, i) => {
+          const final = i === tela.passos.length - 1;
+          return (
+            <div
+              key={i}
+              style={{
+                display: "flex",
+                alignItems: "center",
+                gap: 14 * u,
+                padding: `${16 * u}px ${16 * u}px`,
+                marginBottom: 12 * u,
+                borderRadius: brand.raio * 3 * u,
+                background: final ? c.medio : c.superficieClara,
+                border: `${Math.max(1, 2 * u)}px solid ${final ? c.medio : c.linha}`,
+                color: final ? "#fff" : c.fundoEscuro,
+              }}
+            >
+              <span
+                style={{
+                  flex: "none",
+                  width: 36 * u,
+                  height: 36 * u,
+                  borderRadius: 999,
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  fontFamily: brand.fontes.display,
+                  fontSize: 20 * u,
+                  fontWeight: 700,
+                  background: final ? "rgba(255,255,255,.2)" : c.fundoEscuro,
+                  color: final ? "#fff" : c.fundoClaro,
+                }}
+              >
+                {i + 1}
+              </span>
+              <span style={{ fontFamily: brand.fontes.display, fontSize: 28 * u, fontWeight: 500, lineHeight: 1.2 }}>{passo}</span>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
+// Área tracejada que o usuário cobre com a figurinha do Instagram (enquete, quiz, caixinha).
+export function AreaSticker({ brand, u, p, dica }: Base & { p: Paleta; dica: string }) {
+  const cor = p.escuro ? brand.cores.rotuloSobreEscuro : brand.cores.medio;
+  return (
+    <div
+      style={{
+        height: 150 * u,
+        border: `${3 * u}px dashed ${cor}`,
+        borderRadius: 28 * u,
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        textAlign: "center",
+        padding: `0 ${40 * u}px`,
+        fontFamily: brand.fontes.display,
+        fontSize: 26 * u,
+        fontWeight: 500,
+        color: cor,
+      }}
+    >
+      {dica}
     </div>
   );
 }

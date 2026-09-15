@@ -38,12 +38,14 @@ Siga `references/entrevista.md`. `AskUserQuestion` em rodadas (máx. 4 perguntas
 - Post sobre projeto do usuário: leia código/README/conteúdo do repo; esses fatos são a fonte primária.
 - Post sobre tema: `WebSearch`/`WebFetch` com fontes primárias (documentação oficial, pesquisa original, changelog), preferindo os últimos 12 meses.
 - Registre em `fontes.md` (afirmação → URL/arquivo). **Nenhum número ou afirmação factual entra sem linha em `fontes.md`.** Na dúvida, corte.
+- Nomes de botões/menus citados na arte: confirme no idioma do post; se só achar em outro idioma, registre isso em `fontes.md`.
 
 ## Fase 4 — Roteiro em plan mode
 1. `EnterPlanMode`.
-2. Roteiro conforme `references/roteiro-template.md`: slide a slide com layout, tema, texto **exato** (com `==grifo==`), visual, contagem de acentos; legenda + hashtags; no reels, tempo de cada cena.
-3. Respeite os limites de `references/formatos.md`.
-4. `ExitPlanMode` para aprovação; ajuste e reapresente se pedirem.
+2. Roteiro conforme `references/roteiro-template.md`: slide a slide com layout, tema, texto **exato** (com `==grifo==`), visual, figurinha, contagem de acentos; legenda + hashtags; no reels, tempo de cada cena.
+3. **Todo post tem pelo menos 1 elemento de retenção** (série, layout `celular`, figurinha, contador do carrossel) — ver `references/formatos.md`. Passo a passo em tela vira `celular`, não `lista`.
+4. Respeite os limites de `references/formatos.md`.
+5. `ExitPlanMode` para aprovação; ajuste e reapresente se pedirem.
 
 ## Fase 5 — Produção
 1. Crie `"$POSTS_DIR/AAAA-MM-DD (tema)/"` — data de hoje; entre parênteses o nome do projeto ou o tema curto (ex.: `2026-09-14 (Litoral na Palma)`). Dentro: `roteiro.md` (o aprovado), `fontes.md`, `legenda.md`, `post.json`.
@@ -53,20 +55,24 @@ Siga `references/entrevista.md`. `AskUserQuestion` em rodadas (máx. 4 perguntas
    {
      "id": "AAAA-MM-DD-tema-kebab", "brand": "<brand>", "formato": "carrossel|unico|story|banner-linkedin|reels",
      "variante": "4x5|1x1 (unico) · capa|post (banner-linkedin)", "titulo": "...",
+     "serie": { "nome": "Dica", "numero": 1 },
      "slides": [{
-       "layout": "capa|texto|lista|print|cta", "tema": "claro|tingido|escuro",
+       "layout": "capa|texto|lista|print|celular|cta", "tema": "claro|tingido|escuro",
        "rotulo": "...", "titulo": "Texto com ==grifo==", "corpo": "...", "itens": ["..."],
        "imagem": "arquivo-em-assets.png", "selo": { "texto": "...", "tipo": "ar|pronto|obra" },
-       "fatos": ["..."], "botao": "...", "duracao": 3
+       "fatos": ["..."], "botao": "...",
+       "telas": [{ "rotulo": "Android", "passos": ["Chrome", "Mais", "Instalar"] }],
+       "sticker": { "dica": "Enquete: \"Já instalou um app assim?\"" },
+       "duracao": 3
      }]
    }
    ```
-4. Renderize: `cd "$ESTUDIO" && npm run render -- "AAAA-MM-DD (tema)"`. O script valida acentos e imagens antes.
+4. Renderize: `cd "$ESTUDIO" && npm run render -- "AAAA-MM-DD (tema)"`. O script valida acentos, imagens, telas e figurinha antes.
 5. Layout novo realmente necessário: implemente em `src/formatos/Quadro.tsx` reaproveitando `src/blocos`, carregue a skill `remotion-best-practices` se disponível, e rode `npm run typecheck`.
 
 ## Fase 6 — Verificação (obrigatória antes de entregar)
-- `Read` em **cada** PNG: texto cortado/sobreposto, fonte de fallback (Arial/Georgia no lugar da fonte da brand), grifo no lugar certo, contraste, margem de segurança do story.
+- `Read` em **cada** PNG: texto cortado/sobreposto, fonte de fallback (Arial/Georgia no lugar da fonte da brand), grifo no lugar certo, contraste, margem de segurança do story, conteúdo invadindo o rodapé, texto dos passos quebrando feio dentro do celular.
 - Dimensões: `file "<pasta>"/*.png` · reels: `ffprobe -v error -show_entries stream=width,height,duration -of csv=p=0 "<pasta>/reels.mp4"`.
 - Reels: extraia 3 frames para um diretório temporário (`ffmpeg -ss <t> -i "<pasta>/reels.mp4" -frames:v 1 <tmp>/f.png`) e faça `Read`.
 - Problema: corrija o `post.json` (ou o componente) e renderize só o slide afetado (`--slide=N`).
-- Entregue: caminho da pasta, lista das artes, conteúdo de `legenda.md` e o que foi ajustado na verificação.
+- Entregue: caminho da pasta, lista das artes, conteúdo de `legenda.md` (com o texto da figurinha, se houver) e o que foi ajustado na verificação.

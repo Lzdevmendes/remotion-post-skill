@@ -3,7 +3,9 @@ import type { Brand } from "./brand/tipos";
 export type Formato = "carrossel" | "unico" | "story" | "banner-linkedin" | "reels";
 export type Variante = "4x5" | "1x1" | "capa" | "post";
 export type Tema = "claro" | "tingido" | "escuro";
-export type Layout = "capa" | "texto" | "lista" | "print" | "cta";
+export type Layout = "capa" | "texto" | "lista" | "print" | "cta" | "celular";
+
+export type TelaCelular = { rotulo: string; passos: string[] };
 
 export type Slide = {
   layout: Layout;
@@ -16,6 +18,8 @@ export type Slide = {
   selo?: { texto: string; tipo: "ar" | "pronto" | "obra" };
   fatos?: string[];
   botao?: string;
+  telas?: TelaCelular[];
+  sticker?: { dica: string };
   duracao?: number;
 };
 
@@ -25,6 +29,7 @@ export type Post = {
   formato: Formato;
   variante?: Variante;
   titulo: string;
+  serie?: { nome: string; numero: number };
   slides: Slide[];
 };
 

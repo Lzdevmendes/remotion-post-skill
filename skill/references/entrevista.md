@@ -4,6 +4,7 @@ Regras:
 - `AskUserQuestion`, no máximo 4 perguntas por chamada, cada uma com 2–4 opções concretas; a recomendada vem primeiro com "(Recomendado)". O usuário sempre pode responder em "Other".
 - Uma rodada por vez. Leia a resposta antes de montar a próxima, e pule perguntas já respondidas no pedido inicial.
 - Se o usuário descrever o post em texto livre no pedido, extraia as respostas e pergunte só o que faltar.
+- Se uma resposta "Other" chegar vazia, pergunte de novo antes de seguir — não invente.
 
 ## Rodada 1 — Enquadramento
 1. **Formato**: carrossel · post único · story · banner LinkedIn · reels.
@@ -17,10 +18,14 @@ Regras:
 3. **Assets**: tenho prints/vídeo (pedir caminho) · usar placeholder por enquanto · sem imagem.
 4. **CTA**: me chamar (contato) · visitar site/case · comentar/salvar · nenhum.
 
-## Rodada 3 — Forma
+## Rodada 3 — Forma e retenção
 1. **Tamanho**: carrossel 5 / 7 / 10 slides · reels 15s / 30s. Pule em post único e banner.
 2. **Tom**: direto e técnico · conversa próxima · provocativo/opinião.
-3. **Variante** (se aplicável): post único 4:5 ou 1:1 · banner capa (1584×396) ou post (1200×627).
+3. **Série**: faz parte de uma série? (ex.: "Dica #01", "Case #03") · não. Se sim, confirme `nome` e `numero` (procure posts anteriores da mesma série em `$POSTS_DIR` para continuar a numeração).
+4. **Interação** (só story/reels): enquete · quiz · caixinha de pergunta · nenhuma — e o texto da figurinha.
+
+Pergunte a **variante** junto quando aplicável: post único 4:5 ou 1:1 · banner capa (1584×396) ou post (1200×627).
+Se o conteúdo tiver passo a passo em tela, proponha o layout `celular` no roteiro em vez de lista.
 
 ## Rodada grill — apertar a tese (até ficar nítida)
 Faça 1–2 perguntas por vez, **sem opções prontas quando a resposta precisa vir do usuário**:
@@ -30,4 +35,4 @@ Faça 1–2 perguntas por vez, **sem opções prontas quando a resposta precisa 
 - "O que você **não** vai dizer nesse post?" (corta escopo)
 - "Qual objeção o público tem e onde o post responde?"
 
-Critério de saída: existe **gancho** (1º slide), **tese** (frase única), **prova** (fato com fonte ou print) e **CTA**. Faltou algum? Pergunte de novo, não preencha por conta própria.
+Critério de saída: existe **gancho** (1º slide), **tese** (frase única), **prova** (fato com fonte ou print), **CTA** (ou "nenhum" explícito) e **pelo menos 1 elemento de retenção** (ver `formatos.md`). Faltou algum? Pergunte de novo, não preencha por conta própria.
