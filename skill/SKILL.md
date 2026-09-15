@@ -63,7 +63,7 @@ Siga `references/entrevista.md`. `AskUserQuestion` em rodadas (máx. 4 perguntas
        "emoji": "🏖️", "kicker": "o que ninguém te conta", "rotulo": "...",
        "titulo": "Texto com ==grifo==, **destaque**, __sublinhado__ ou ~~riscado~~", "corpo": "...",
        "itens": ["linha simples", { "titulo": "card", "sub": "subtítulo", "emoji": "⏱️", "icone": "check" }],
-       "imagem": "print.png", "avatar": "eu-recortado.png", "selo": { "texto": "...", "tipo": "ar|pronto|obra" },
+       "imagem": "print.png", "encaixe": "cobrir|inteiro", "avatar": "eu-recortado.png", "selo": { "texto": "...", "tipo": "ar|pronto|obra" },
        "fatos": ["..."], "botao": "...",
        "telas": [{ "rotulo": "Android", "passos": ["Chrome", "Mais", "Instalar"] }, { "rotulo": "Painel", "imagem": "print-painel.png" }],
        "numero": { "valor": "01", "legenda": "de 06 passos" },

@@ -15,7 +15,7 @@
 | capa | 1º slide / gancho | rotulo, titulo (grande), corpo curto |
 | texto | uma ideia por slide | rotulo, titulo, corpo |
 | lista | checklist, comparação, "o que rola aqui" | titulo, itens (texto simples = linhas; objetos = cards) |
-| print | case/prova visual | titulo, imagem, corpo, fatos, selo |
+| print | case/prova visual | titulo, imagem, `encaixe`, corpo, fatos, selo |
 | celular | passo a passo num app/sistema, mostrado em vez de descrito | titulo, telas (1–2, cada uma com rotulo + 1–4 passos), corpo |
 | numero | passo N de uma trilha, dado que choca ("0 vezes"), capítulo | numero `{ valor, legenda }`, titulo, corpo, itens |
 | codigo | trecho de código ou antes & depois | titulo, codigo (1–2 janelas `{ arquivo, rotulo?, linhas }`), corpo |

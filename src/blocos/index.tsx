@@ -595,14 +595,17 @@ export function JanelasCodigo({ brand, u, janelas, progresso }: Base & { janelas
   );
 }
 
-export function Tela({ brand, u, p, postId, imagem, alturaMax }: Base & { p: Paleta; postId: string; imagem?: string; alturaMax?: number }) {
+export function Tela({ brand, u, p, postId, imagem, alturaMax, encaixe = "cobrir" }: Base & { p: Paleta; postId: string; imagem?: string; alturaMax?: number; encaixe?: "cobrir" | "inteiro" }) {
   const src = imagem ? assetSrc(postId, imagem) : null;
+  const inteiro = encaixe === "inteiro";
   return (
     <div
       style={{
         width: "100%",
-        aspectRatio: "16 / 10",
-        maxHeight: alturaMax,
+        // "inteiro": altura fixa e imagem contida — arte vertical (4:5, 9:16) aparece sem corte.
+        aspectRatio: inteiro ? undefined : "16 / 10",
+        height: inteiro ? (alturaMax ?? 620 * u) : undefined,
+        maxHeight: inteiro ? undefined : alturaMax,
         background: brand.cores.telaGradiente,
         border: `${Math.max(1, 2 * u)}px solid ${p.linha}`,
         borderRadius: brand.raio * u,
@@ -617,7 +620,7 @@ export function Tela({ brand, u, p, postId, imagem, alturaMax }: Base & { p: Pal
         textTransform: "uppercase",
       }}
     >
-      {src ? <Img src={src} style={{ width: "100%", height: "100%", objectFit: "cover" }} /> : "print do projeto"}
+      {src ? <Img src={src} style={{ width: "100%", height: "100%", objectFit: inteiro ? "contain" : "cover" }} /> : "print do projeto"}
     </div>
   );
 }

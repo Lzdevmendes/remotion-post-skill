@@ -19,6 +19,8 @@ export type Slide = {
   corpo?: string;
   itens?: (string | ItemCard)[];
   imagem?: string;
+  // "cobrir" (padrão) preenche a moldura 16:10 e corta as sobras; "inteiro" mostra a arte completa.
+  encaixe?: "cobrir" | "inteiro";
   avatar?: string;
   selo?: { texto: string; tipo: "ar" | "pronto" | "obra" };
   fatos?: string[];

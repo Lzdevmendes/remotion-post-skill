@@ -263,7 +263,7 @@ function ConteudoVertical({ brand, slide, p, u, postId, progresso, animado, vert
           {slide.rotulo && <Rotulo brand={brand} u={u} p={p}>{slide.rotulo}</Rotulo>}
           {slide.titulo && <Titulo brand={brand} u={u} p={p} texto={slide.titulo} tamanho={60 * escala} progresso={progresso} />}
           <div style={{ marginTop: 40 * u }}>
-            <Tela brand={brand} u={u} p={p} postId={postId} imagem={slide.imagem} />
+            <Tela brand={brand} u={u} p={p} postId={postId} imagem={slide.imagem} encaixe={slide.encaixe} />
           </div>
           {slide.corpo && <div style={{ marginTop: 32 * u }}><Corpo brand={brand} u={u} p={p} texto={slide.corpo} tamanho={32} progresso={progresso} /></div>}
           {slide.fatos && <div style={{ marginTop: 28 * u }}><Fatos brand={brand} u={u} p={p} fatos={slide.fatos} /></div>}
