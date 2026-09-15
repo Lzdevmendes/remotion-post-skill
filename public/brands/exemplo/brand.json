@@ -1,0 +1,35 @@
+{
+  "id": "exemplo",
+  "nome": "Estúdio Exemplo",
+  "site": "exemplo.dev",
+  "handle": "@exemplo",
+  "marca": { "texto": "ex", "ponto": "." },
+  "cores": {
+    "fundoEscuro": "#16161D",
+    "superficieEscura": "#23232D",
+    "medio": "#4F46E5",
+    "fundoClaro": "#FAFAF7",
+    "superficieClara": "#F0EFEA",
+    "linha": "#DEDCD4",
+    "linhaSobreEscuro": "rgba(250,250,247,.16)",
+    "neutro": "#5E5E6B",
+    "rotuloSobreEscuro": "#A3A3B5",
+    "ledeSobreEscuro": "#C4C4D1",
+    "acento": "#FF7A59",
+    "acentoFundo": "#FFE9E2",
+    "acentoTexto": "#8A2F17",
+    "telaGradiente": "radial-gradient(circle at 30% 25%, #2E2E3A 0%, #16161D 70%)",
+    "telaTexto": "#8C8C9C"
+  },
+  "fontes": {
+    "display": "Space Grotesk",
+    "texto": "Newsreader",
+    "mono": "JetBrains Mono"
+  },
+  "arquivosFonte": [],
+  "googleFonts": ["SpaceGrotesk", "Newsreader", "JetBrainsMono"],
+  "raio": 6,
+  "rotuloTracking": "0.08em",
+  "tituloTracking": "-0.03em",
+  "maxAcentosPorArte": 3
+}

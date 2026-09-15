@@ -1,0 +1,16 @@
+{
+  "id": "teste-banner",
+  "brand": "lz-landing",
+  "formato": "banner-linkedin",
+  "variante": "capa",
+  "titulo": "Teste banner LinkedIn",
+  "slides": [
+    {
+      "layout": "texto",
+      "tema": "claro",
+      "titulo": "Software que ==entra em produção==.",
+      "corpo": "Web, mobile e as integrações no meio.",
+      "fatos": ["Next.js", "React Native", "Supabase"]
+    }
+  ]
+}

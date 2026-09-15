@@ -1,0 +1,16 @@
+{
+  "id": "teste-banner-post",
+  "brand": "lz-landing",
+  "formato": "banner-linkedin",
+  "variante": "post",
+  "titulo": "Teste post LinkedIn 1200x627",
+  "slides": [
+    {
+      "layout": "texto",
+      "rotulo": "Trabalho",
+      "titulo": "Sem número que eu não consiga ==te mostrar rodando==.",
+      "corpo": "Projetos próprios, do primeiro commit ao deploy.",
+      "fatos": ["Next.js", "React Native", "Supabase"]
+    }
+  ]
+}

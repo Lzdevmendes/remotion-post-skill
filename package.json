@@ -1,0 +1,27 @@
+{
+  "name": "remotion-post-skill",
+  "description": "Claude Code skill + Remotion studio: on-brand social media posts generated in code",
+  "license": "MIT",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "studio": "remotion studio",
+    "render": "node scripts/render.mjs",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@remotion/bundler": "4.0.524",
+    "@remotion/cli": "4.0.524",
+    "@remotion/fonts": "4.0.524",
+    "@remotion/google-fonts": "4.0.524",
+    "@remotion/renderer": "4.0.524",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "remotion": "4.0.524"
+  },
+  "devDependencies": {
+    "@types/node": "26.5.1",
+    "@types/react": "19.3.0",
+    "typescript": "7.0.2"
+  }
+}

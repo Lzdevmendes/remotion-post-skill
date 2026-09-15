@@ -1,0 +1,27 @@
+{
+  "id": "exemplo-brand-generica",
+  "brand": "exemplo",
+  "formato": "carrossel",
+  "titulo": "Exemplo com a brand genérica",
+  "slides": [
+    {
+      "layout": "capa",
+      "rotulo": "Guia rápido",
+      "titulo": "Seu post com ==a cara do seu projeto==.",
+      "corpo": "Fontes, cores e tipografia lidas direto do código."
+    },
+    {
+      "layout": "lista",
+      "tema": "tingido",
+      "rotulo": "Como funciona",
+      "titulo": "Do design ao PNG",
+      "itens": ["Lê o design do projeto", "Entrevista e pesquisa o tema", "Roteiro aprovado em plan mode", "Renderiza e confere cada arte"]
+    },
+    {
+      "layout": "cta",
+      "rotulo": "Comece",
+      "titulo": "Rode ==/post== no seu projeto.",
+      "botao": "remotion-post-skill →"
+    }
+  ]
+}

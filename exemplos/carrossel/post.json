@@ -1,0 +1,42 @@
+{
+  "id": "teste-carrossel",
+  "brand": "lz-landing",
+  "formato": "carrossel",
+  "titulo": "Teste de todos os layouts",
+  "slides": [
+    {
+      "layout": "capa",
+      "rotulo": "Trabalho",
+      "titulo": "Software que ==entra em produção==: web, mobile e as integrações no meio.",
+      "corpo": "Escopo combinado antes de começar, código seu no fim."
+    },
+    {
+      "layout": "texto",
+      "tema": "tingido",
+      "rotulo": "Como trabalho",
+      "titulo": "Um projeto por vez.",
+      "corpo": "Construo sistema sob medida para operação pequena que já cansou de emendar quatro ferramentas prontas."
+    },
+    {
+      "layout": "lista",
+      "rotulo": "O que entra",
+      "titulo": "Do primeiro commit ao ==deploy==.",
+      "itens": ["Escopo combinado antes de começar", "Resposta em até 24h, por WhatsApp ou e-mail", "Código seu no fim"]
+    },
+    {
+      "layout": "print",
+      "rotulo": "Case",
+      "titulo": "Litoral na Palma",
+      "selo": { "texto": "MVP fechado", "tipo": "pronto" },
+      "corpo": "App do litoral norte: praias, balsas, trânsito e alertas por geofencing em 4 municípios.",
+      "fatos": ["4 municípios", "33 praias", "6 idiomas", "121 testes"]
+    },
+    {
+      "layout": "cta",
+      "rotulo": "Contato",
+      "titulo": "Quer um projeto assim? ==Me chama.==",
+      "corpo": "Resposta em até 24h.",
+      "botao": "lz.dev.br/contato →"
+    }
+  ]
+}

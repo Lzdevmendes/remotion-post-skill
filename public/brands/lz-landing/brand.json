@@ -1,0 +1,78 @@
+{
+  "id": "lz-landing",
+  "nome": "Luiz Mendes",
+  "site": "lz.dev.br",
+  "handle": "linkedin.com/in/lzmendess",
+  "marca": { "texto": "lz", "ponto": "." },
+  "cores": {
+    "fundoEscuro": "#062B27",
+    "superficieEscura": "#0C3B35",
+    "medio": "#2E6E63",
+    "fundoClaro": "#F5F6F1",
+    "superficieClara": "#EAEEE7",
+    "linha": "#D5DCD4",
+    "linhaSobreEscuro": "rgba(245,246,241,.18)",
+    "neutro": "#576862",
+    "rotuloSobreEscuro": "#8FA9A2",
+    "ledeSobreEscuro": "#B4C7C1",
+    "acento": "#FFC63D",
+    "acentoFundo": "#FFF3D2",
+    "acentoTexto": "#6B4E00",
+    "telaGradiente": "radial-gradient(circle at 30% 25%, #12463E 0%, #062B27 70%)",
+    "telaTexto": "#7E9891"
+  },
+  "fontes": {
+    "display": "Bricolage Grotesque",
+    "texto": "Source Serif 4",
+    "mono": "JetBrains Mono"
+  },
+  "arquivosFonte": [
+    {
+      "family": "Bricolage Grotesque",
+      "arquivo": "bricolage-grotesque-latin.woff2",
+      "weight": "400 800",
+      "style": "normal",
+      "unicodeRange": "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD"
+    },
+    {
+      "family": "Bricolage Grotesque",
+      "arquivo": "bricolage-grotesque-latin-ext.woff2",
+      "weight": "400 800",
+      "style": "normal",
+      "unicodeRange": "U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF"
+    },
+    {
+      "family": "Source Serif 4",
+      "arquivo": "source-serif-4-normal-latin.woff2",
+      "weight": "400 600",
+      "style": "normal",
+      "unicodeRange": "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD"
+    },
+    {
+      "family": "Source Serif 4",
+      "arquivo": "source-serif-4-normal-latin-ext.woff2",
+      "weight": "400 600",
+      "style": "normal",
+      "unicodeRange": "U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF"
+    },
+    {
+      "family": "Source Serif 4",
+      "arquivo": "source-serif-4-italic-latin.woff2",
+      "weight": "400",
+      "style": "italic",
+      "unicodeRange": "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD"
+    },
+    {
+      "family": "Source Serif 4",
+      "arquivo": "source-serif-4-italic-latin-ext.woff2",
+      "weight": "400",
+      "style": "italic",
+      "unicodeRange": "U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF"
+    }
+  ],
+  "googleFonts": ["JetBrainsMono"],
+  "raio": 3,
+  "rotuloTracking": "0.08em",
+  "tituloTracking": "-0.02em",
+  "maxAcentosPorArte": 3
+}

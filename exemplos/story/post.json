@@ -1,0 +1,16 @@
+{
+  "id": "teste-story",
+  "brand": "lz-landing",
+  "formato": "story",
+  "titulo": "Teste story",
+  "slides": [
+    {
+      "layout": "print",
+      "rotulo": "Em produção",
+      "titulo": "Galvão Store",
+      "selo": { "texto": "Em produção", "tipo": "ar" },
+      "corpo": "E-commerce de calçados com checkout Mercado Pago e painel próprio.",
+      "fatos": ["Next.js 15", "Drizzle", "Mercado Pago", "Turborepo"]
+    }
+  ]
+}

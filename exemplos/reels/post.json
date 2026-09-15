@@ -1,0 +1,11 @@
+{
+  "id": "teste-reels",
+  "brand": "lz-landing",
+  "formato": "reels",
+  "titulo": "Teste reels",
+  "slides": [
+    { "layout": "capa", "rotulo": "Trabalho", "titulo": "Software que ==entra em produção==.", "duracao": 3 },
+    { "layout": "lista", "titulo": "Como funciona", "itens": ["Escopo antes", "Um projeto por vez", "Código seu no fim"], "duracao": 3.5 },
+    { "layout": "cta", "titulo": "==Me chama.==", "botao": "lz.dev.br →", "duracao": 2.5 }
+  ]
+}

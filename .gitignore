@@ -1,0 +1,6 @@
+node_modules/
+.remotion/
+public/_assets/
+config.local.json
+exemplos/**/*.png
+exemplos/**/*.mp4

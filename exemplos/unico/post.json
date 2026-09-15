@@ -1,0 +1,15 @@
+{
+  "id": "teste-unico",
+  "brand": "lz-landing",
+  "formato": "unico",
+  "variante": "1x1",
+  "titulo": "Teste post único 1x1",
+  "slides": [
+    {
+      "layout": "texto",
+      "rotulo": "Trabalho",
+      "titulo": "Sem número que eu não consiga ==te mostrar rodando==.",
+      "corpo": "Projetos próprios, do primeiro commit ao deploy."
+    }
+  ]
+}
