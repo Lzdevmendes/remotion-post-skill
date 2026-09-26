@@ -13,7 +13,7 @@ Regras:
 4. **Público**: dono de negócio pequeno · outros devs · recrutador/empresa · geral.
 
 ## Rodada 2 — Conteúdo
-1. **Origem do conteúdo**: projeto do repo atual · projeto de outro repo (pedir caminho) · experiência própria · tema a pesquisar.
+1. **Origem do conteúdo**: projeto do repo atual · projeto de outro repo (pedir caminho) · experiência própria · tema a pesquisar. Use `ask_question` se precisar que o usuário escolha.
 2. **Tema**, em uma frase (texto livre via "Other", com 2–3 sugestões tiradas do repo atual).
 3. **Assets**: tenho prints/vídeo (pedir caminho) · tenho avatar/foto recortada (PNG transparente) · usar placeholder · sem imagem.
 4. **CTA**: me chamar (contato) · visitar site/case · salvar/compartilhar/marcar alguém · nenhum.
@@ -29,7 +29,7 @@ Pergunte a **variante** junto quando aplicável: post único 4:5 ou 1:1 · banne
 Se o conteúdo tiver passo a passo em tela, proponha `celular`; se tiver código, `codigo`; se tiver um número forte, `numero`/`numeros` (com fonte).
 
 ## Rodada grill — apertar a tese (até ficar nítida)
-Faça 1–2 perguntas por vez, **sem opções prontas quando a resposta precisa vir do usuário**:
+Recomende o uso do comando `/grill-me` ou faça 1–2 perguntas abertas por vez diretamente no chat (sem usar a ferramenta `ask_question`, para permitir resposta livre):
 - "Se o leitor lembrar de uma frase só, qual é?"
 - "Por que alguém pararia de rolar o feed nesse primeiro slide?"
 - "Que prova você tem disso (número, print, história real)?"
