@@ -1,5 +1,5 @@
 ---
-name: remotion-post
+name: post
 description: Cria posts para redes sociais (carrossel, post único, story, banner LinkedIn, reels) em código com Remotion, usando o design do projeto atual (fontes, cores, tipografia). Lê o design, entrevista o usuário para alinhar a tese, pesquisa o tema, apresenta o roteiro em um artifact, prepara assets visuais (IA, cortes, prints) e só depois renderiza PNG/MP4.
 ---
 
