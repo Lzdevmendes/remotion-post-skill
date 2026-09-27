@@ -7,6 +7,7 @@ import { useBrandFonts } from "../brand/fontes";
 import type { Brand } from "../brand/tipos";
 import { quadrosCena, TRANSICAO, type ArteProps, type Post, type Slide } from "../tipos-post";
 import { Quadro } from "./Quadro";
+import { PromoSistema } from "./PromoSistema";
 
 // Mesmas curvas da landing: --ease-saida e a animação "grifar" (.72s com atraso de .55s).
 const EASE_SAIDA = Easing.bezier(0.22, 0.7, 0.3, 1);
@@ -14,6 +15,8 @@ const CLAMP = { extrapolateLeft: "clamp", extrapolateRight: "clamp" } as const;
 
 export function Reels({ post, brand }: ArteProps) {
   useBrandFonts(brand);
+  if (post.variante === "promo-sistema") return <PromoSistema post={post} brand={brand} indice={0} />;
+
   const timing = springTiming({ config: { damping: 200 }, durationInFrames: TRANSICAO });
   return (
     <AbsoluteFill style={{ background: brand.cores.fundoClaro }}>
