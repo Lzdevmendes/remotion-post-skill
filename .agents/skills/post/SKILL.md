@@ -6,7 +6,7 @@ description: Cria posts para redes sociais (carrossel, post único, story, banne
 # Criador de Posts com Remotion
 
 ## Caminhos (resolva antes de tudo)
-- **Estúdio** (este repo): `ESTUDIO="$(cd "$(dirname "$(readlink -f "./skill/SKILL.md")")/.." && pwd)"` (ajuste o caminho de acordo com seu diretório de trabalho atual).
+- **Estúdio** (o repo do Remotion): `ESTUDIO="/home/luiz/www./remotion-post-skill"` (este é o caminho fixo onde a engine de posts vive).
 - **Pasta dos posts**, nesta ordem: env `POSTS_DIR` → campo `postsDir` de `"$ESTUDIO/config.local.json"` → `~/Posts`.
   Se `config.local.json` não existir, pergunte ao usuário onde salvar e crie o arquivo a partir de `config.example.json`.
 - Caminhos podem ter espaço, apóstrofo ou parênteses: **sempre entre aspas duplas** no shell ao usar `run_command`.
@@ -44,6 +44,7 @@ Siga `references/entrevista.md`. Use a ferramenta `ask_question` em rodadas (má
 2. Roteiro conforme `references/roteiro-template.md`: slide a slide com layout, tema, texto **exato** (com as marcas `==grifo==`, `**destaque**`, `__sublinhado__`, `~~riscado~~`), blocos, visual, próximo, figurinha, contagem de acentos; legenda + hashtags; no reels, tempo de cada cena.
 3. Escolha uma **estrutura** de `references/formatos.md` (mito → verdade → prova, trilha, antes & depois, problema → solução, apresentação) ou justifique a livre.
 4. **Todo post tem pelo menos 1 elemento de retenção** (chip de editoria/série, prévia do próximo, spoiler, `celular`, figurinha, final invertido). Passo a passo em tela vira `celular`; código vira `codigo`; dado forte vira `numero`/`numeros`.
+   - **Novo:** Se for um reels apresentando um sistema ou app, você pode usar a variante `promo-sistema`. Neste caso, o post inteiro será renderizado como um showcase 3D contínuo. Use o layout `capa` para o primeiro slide (Intro), layouts normais com `imagem` (os prints da tela) para as cenas, e `cta` para o final. (chip de editoria/série, prévia do próximo, spoiler, `celular`, figurinha, final invertido). Passo a passo em tela vira `celular`; código vira `codigo`; dado forte vira `numero`/`numeros`.
 5. Respeite os limites de `references/formatos.md` (inclusive **no máximo 2 blocos extras por slide**).
 6. Pare de usar ferramentas após gerar o Artifact e **peça aprovação explícita** do usuário; ajuste e reapresente se pedirem.
 
@@ -62,7 +63,7 @@ Antes de montar o JSON e renderizar, os arquivos físicos precisam estar prontos
    ```json
    {
      "id": "AAAA-MM-DD-tema-kebab", "brand": "<brand>", "formato": "carrossel|unico|story|banner-linkedin|reels",
-     "variante": "4x5|1x1 (unico) · capa|post (banner-linkedin)", "titulo": "...",
+     "variante": "4x5|1x1 (unico) · capa|post (banner-linkedin) · promo-sistema (reels showcase 3D)", "titulo": "...",
      "editoria": "Terça · Mito", "serie": { "nome": "Mito", "numero": 1 },
      "fundo": "liso|orbs", "musica": { "arquivo": "trilha.mp3", "inicio": 40, "volume": 0.7 },
      "slides": [{
