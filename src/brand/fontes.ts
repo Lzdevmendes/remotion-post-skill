@@ -7,6 +7,8 @@ import type { Brand } from "./tipos";
 const GOOGLE_FONTS: Record<string, () => Promise<{ waitUntilDone: () => Promise<void> }>> = {
   JetBrainsMono: async () =>
     (await import("@remotion/google-fonts/JetBrainsMono")).loadFont("normal", { weights: ["400", "500"], subsets: ["latin"] }),
+  Inter: async () =>
+    (await import("@remotion/google-fonts/Inter")).loadFont("normal", { weights: ["400", "500", "600", "700"], subsets: ["latin", "latin-ext"] }),
   SpaceGrotesk: async () =>
     (await import("@remotion/google-fonts/SpaceGrotesk")).loadFont("normal", { weights: ["400", "500", "600", "700"], subsets: ["latin", "latin-ext"] }),
   Newsreader: async () =>
