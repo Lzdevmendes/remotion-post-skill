@@ -1,0 +1,36 @@
+{
+  "id": "litoralnapalma",
+  "nome": "Litoral na Palma",
+  "site": "litoralnapalma.com.br",
+  "handle": "@litoralnapalma",
+  "marca": { "texto": "litoral na palma", "ponto": "." },
+  "cores": {
+    "fundoEscuro": "#023E5A",
+    "superficieEscura": "#0A5578",
+    "medio": "#0077B6",
+    "fundoClaro": "#EAF5FC",
+    "superficieClara": "#D9EBF7",
+    "linha": "rgba(2,62,90,.12)",
+    "linhaSobreEscuro": "rgba(234,245,252,.18)",
+    "neutro": "#4A6072",
+    "rotuloSobreEscuro": "#8199AC",
+    "ledeSobreEscuro": "#B9D6E8",
+    "acento": "#F59E0B",
+    "acentoFundo": "#FEF3C7",
+    "acentoTexto": "#7A5813",
+    "alerta": "#EF4444",
+    "telaGradiente": "radial-gradient(circle at 30% 25%, #0A5578 0%, #023E5A 70%)",
+    "telaTexto": "#8199AC"
+  },
+  "fontes": {
+    "display": "Space Grotesk",
+    "texto": "Inter",
+    "mono": "JetBrains Mono"
+  },
+  "arquivosFonte": [],
+  "googleFonts": ["SpaceGrotesk", "Inter", "JetBrainsMono"],
+  "raio": 10,
+  "rotuloTracking": "0.08em",
+  "tituloTracking": "-0.02em",
+  "maxAcentosPorArte": 3
+}
