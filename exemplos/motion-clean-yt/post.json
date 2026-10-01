@@ -1,0 +1,77 @@
+{
+  "id": "exemplo-motion-clean-yt",
+  "brand": "lz-landing",
+  "formato": "video-yt",
+  "variante": "motion-clean",
+  "titulo": "Template Motion Clean & Kinetic (YouTube 16:9)",
+  "editoria": "Produto & Engenharia",
+  "serie": { "nome": "Showcase", "numero": 1 },
+  "fundo": "liso",
+  "slides": [
+    {
+      "layout": "capa",
+      "tema": "escuro",
+      "kicker": "ALERTA DE MARGEM",
+      "titulo": "Para onde vai **27% do lucro** do seu restaurante?",
+      "duracao": 3.5
+    },
+    {
+      "layout": "texto",
+      "tema": "escuro",
+      "kicker": "A REALIDADE DO SALÃO",
+      "titulo": "Garçom sobrecarregado e ==taxas abusivas== em cada pedido.",
+      "corpo": "Dependência de marketplaces corrói a saúde financeira.",
+      "duracao": 4.0
+    },
+    {
+      "layout": "capa",
+      "tema": "tingido",
+      "kicker": "PRODUTO LZ.DEV.BR",
+      "titulo": "Apresentamos o **PedeFree**.",
+      "corpo": "Cardápio e pedidos por QR Code direto na mesa.",
+      "duracao": 3.5
+    },
+    {
+      "layout": "celular",
+      "tema": "escuro",
+      "kicker": "ZERO ATRITO",
+      "titulo": "O cliente aponta a câmera e pede em **30 segundos**.",
+      "telas": [
+        {
+          "rotulo": "PedeFree Store",
+          "passos": ["Escaneia QR Code", "Abre Cardápio PWA", "Adiciona ao Carrinho", "Pede Instantâneo"]
+        }
+      ],
+      "duracao": 4.5
+    },
+    {
+      "layout": "lista",
+      "tema": "escuro",
+      "kicker": "OPERAÇÃO INTEGRADA",
+      "titulo": "O pedido cai na cozinha **em tempo real**.",
+      "itens": [
+        { "titulo": "Notificação instantânea", "sub": "FCM Push & Polling", "emoji": "⚡" },
+        { "titulo": "Status sincronizado", "sub": "Atualizado a cada 10s", "emoji": "🔄" },
+        { "titulo": "Garçom livre", "sub": "Foco total na experiência", "emoji": "🍽️" }
+      ],
+      "duracao": 4.0
+    },
+    {
+      "layout": "numero",
+      "tema": "acento",
+      "numero": {
+        "valor": "0%",
+        "legenda": "De comissão por prato. 100% do lucro fica no restaurante."
+      },
+      "duracao": 3.5
+    },
+    {
+      "layout": "cta",
+      "tema": "escuro",
+      "kicker": "TESTE A DEMO AGORA",
+      "titulo": "Transforme o atendimento do seu salão **hoje**.",
+      "botao": "pedefree.lz.dev.br",
+      "duracao": 3.5
+    }
+  ]
+}
