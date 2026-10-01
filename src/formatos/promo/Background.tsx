@@ -5,7 +5,7 @@ import { usePromo, rgba } from "./PromoContext";
 /** Fundo escuro com focos de luz da marca borrados, feixe diagonal e granulação. */
 export const Background: React.FC<{ f: number; glowY?: number; boost?: number }> = ({ f, glowY = 0, boost = 0 }) => {
   const { brand } = usePromo();
-  const BRAND = { bg: brand.cores.fundoClaro, glow: brand.cores.acento };
+  const BRAND = { bg: brand.cores.fundoClaro, glow: brand.cores.acento, glow2: brand.cores.medio };
   const pulse = 0.82 + 0.18 * Math.sin(f / 70);
   const driftA = Math.sin(f / 240) * 60;
   const driftB = Math.cos(f / 300) * 80;

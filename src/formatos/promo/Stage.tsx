@@ -90,7 +90,7 @@ export const BrowserWindow: React.FC<{ title: string; sheen: number; children: R
             justifyContent: "center",
             gap: 7,
             color: "#A89C90",
-            fontFamily: brand.fontes.corpo,
+            fontFamily: brand.fontes.texto,
             fontSize: 14,
             fontWeight: 500,
           }}
@@ -120,7 +120,6 @@ export const BrowserWindow: React.FC<{ title: string; sheen: number; children: R
   </>
   );
 }
-);
 
 /** Elemento flutuando acima do plano da janela (efeito de profundidade). x/y em coordenadas da janela. */
 export const Float: React.FC<{

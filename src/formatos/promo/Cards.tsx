@@ -10,7 +10,7 @@ import { Float } from "./Stage";
 export const Toast: React.FC<{ f: number; at: number; dur: number; x: number; y: number; text: string }> = ({ f, at, dur, x, y, text }) => {
   const { brand } = usePromo();
   const BRAND = { bg: brand.cores.fundoClaro, text: brand.cores.textoEscuro || "#111", glow: brand.cores.acento };
-  const fontBody = brand.fontes.corpo;
+  const fontBody = brand.fontes.texto;
   const i = EASE(clamp((f - at) / 22));
   const o = SMOOTH(clamp((f - at - dur) / 14));
   return (
@@ -58,7 +58,7 @@ export const DepthCard: React.FC<{f: number; at: number; end: number; from: {x: 
   const { brand } = usePromo();
   const BRAND = { bg: brand.cores.fundoClaro, text: brand.cores.textoEscuro || "#111", glow: brand.cores.acento };
   const fontDisplay = brand.fontes.titulo;
-  const fontBody = brand.fontes.corpo;
+  const fontBody = brand.fontes.texto;
   const ACCENT_GRADIENT = `linear-gradient(90deg, ${brand.cores.acento}, ${brand.cores.acento})`;
   const i = EASE(clamp((f - at) / 30));
   const o = SMOOTH(clamp((f - end) / 16));

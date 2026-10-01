@@ -1,6 +1,6 @@
 import React from "react";
 import { EASE, SMOOTH, clamp, tw } from "./anim";
-import { usePromo } from "./PromoContext";
+import { usePromo, rgba } from "./PromoContext";
 
 export type CaptionData = {
   n: string; // "01"
@@ -21,6 +21,10 @@ export const Word: React.FC<{ f: number; at: number; outAt: number; children: st
   accent,
   dur = 30,
 }) => {
+  const { brand } = usePromo();
+  const BRAND = { hi: brand.cores.acento, lo: brand.cores.medio };
+  const ACCENT_GRADIENT = `linear-gradient(135deg, ${BRAND.hi}, ${BRAND.lo})`;
+  
   const p = EASE(clamp((f - at) / dur));
   const o = SMOOTH(clamp((f - outAt) / 16));
   return (
@@ -43,6 +47,11 @@ export const Word: React.FC<{ f: number; at: number; outAt: number; children: st
 
 /** Legenda numerada no terço de cima (fica por cima da vinheta sólida). */
 export const Caption: React.FC<{ f: number; c: CaptionData }> = ({ f, c }) => {
+  const { brand } = usePromo();
+  const BRAND = { hi: brand.cores.acento, lo: brand.cores.medio, onAccent: "#fff", pastel: brand.cores.neutro, cream: "#fff", muted: brand.cores.neutro };
+  const fontDisplay = brand.fontes.display;
+  const fontBody = brand.fontes.texto; // Not corpo, it's texto in brand.json
+
   if (f < c.inAt - 2 || f > c.outAt + 24) return null;
   const kIn = tw(f, c.inAt, c.inAt + 24);
   const kOut = tw(f, c.outAt, c.outAt + 16, 0, 1, SMOOTH);
