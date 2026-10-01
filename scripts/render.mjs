@@ -47,8 +47,9 @@ const brand = JSON.parse(readFileSync(caminhoBrand, "utf8"));
 
 const erros = [];
 const formatoVertical = post.formato === "story" || post.formato === "reels";
+const formatoVideo = post.formato === "reels" || post.formato === "video-yt";
 if (post.musica) {
-  if (post.formato !== "reels") erros.push("musica só existe no formato reels");
+  if (!formatoVideo) erros.push("musica só existe nos formatos reels e video-yt");
   else if (!existsSync(path.join(pastaPost, "assets", post.musica.arquivo))) erros.push(`musica assets/${post.musica.arquivo} não existe`);
 }
 post.slides.forEach((slide, i) => {
@@ -104,10 +105,12 @@ const postRender = { ...post, id: idSeguro };
 console.log(`Empacotando (${post.formato}, ${post.slides.length} slides)...`);
 const serveUrl = await bundle({ entryPoint: path.join(RAIZ, "src/index.ts"), publicDir: path.join(RAIZ, "public") });
 
-if (post.formato === "reels") {
+if (formatoVideo) {
+  const isYT = post.formato === "video-yt";
   const inputProps = { post: postRender, brand, indice: 0 };
-  const composition = await selectComposition({ serveUrl, id: "Reels", inputProps });
-  const arquivo = path.join(pastaPost, "reels.mp4");
+  const compId = isYT ? "VideoYT" : "Reels";
+  const composition = await selectComposition({ serveUrl, id: compId, inputProps });
+  const arquivo = path.join(pastaPost, isYT ? "video-yt.mp4" : "reels.mp4");
   await renderMedia({ serveUrl, composition, inputProps, codec: "h264", crf: 18, outputLocation: arquivo });
   console.log(`✓ ${arquivo} (${composition.width}×${composition.height}, ${composition.durationInFrames} frames)`);
 } else {

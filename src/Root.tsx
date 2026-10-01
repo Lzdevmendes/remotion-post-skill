@@ -25,6 +25,16 @@ export function RemotionRoot() {
         defaultProps={exemploReels}
         calculateMetadata={metaReels}
       />
+      <Composition
+        id="VideoYT"
+        component={Reels}
+        fps={FPS}
+        width={1920}
+        height={1080}
+        durationInFrames={duracaoReels(exemploReels.post)}
+        defaultProps={exemploReels}
+        calculateMetadata={metaReels}
+      />
     </>
   );
 }

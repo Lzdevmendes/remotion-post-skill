@@ -1,7 +1,7 @@
 import type { Brand } from "./brand/tipos";
 
-export type Formato = "carrossel" | "unico" | "story" | "banner-linkedin" | "reels";
-export type Variante = "4x5" | "1x1" | "capa" | "post" | "promo-sistema";
+export type Formato = "carrossel" | "unico" | "story" | "banner-linkedin" | "reels" | "video-yt";
+export type Variante = "4x5" | "1x1" | "capa" | "post" | "promo-sistema" | "motion-clean";
 export type Tema = "claro" | "tingido" | "escuro" | "acento";
 export type Layout = "capa" | "texto" | "lista" | "print" | "celular" | "numero" | "codigo" | "cta";
 
@@ -59,6 +59,8 @@ export function dimensoes(post: Post): { width: number; height: number } {
     case "story":
     case "reels":
       return { width: 1080, height: 1920 };
+    case "video-yt":
+      return { width: 1920, height: 1080 };
     case "banner-linkedin":
       return post.variante === "post" ? { width: 1200, height: 627 } : { width: 1584, height: 396 };
   }
